@@ -3,7 +3,7 @@ from rich.table import Table
 
 class KCLEmailChecker():
     def is_correct_format(self,email):
-        regex=re.compile(r'((k)([0-9]{7,8})(\@)(kcl\.ac\.uk))|(([a-z]{2,})((\.)|(\.[0-9]{1}\.))([a-z]{2,})(\@)(kcl\.ac\.uk))')
+        regex=re.compile(r'((k)([0-9]{7,8})(\@)(kcl\.ac\.uk))|(([a-z]{2,})((\.)|(\.([0-9]|[a-z]){1}\.))([a-z]{2,})(\@)(kcl\.ac\.uk))')
         if (regex.match(email)):
             return True
         return False
