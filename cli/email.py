@@ -1,6 +1,6 @@
 import re
 from rich.table import Table
-
+import webbrowser
 class KCLEmailChecker():
     
     def is_correct_format(self,email):
@@ -28,6 +28,10 @@ class KCLEmailChecker():
             last_name = re.split(r"\.",full_name)[1]
             return f"{first_name.capitalize()} {last_name.capitalize()}"
         return "Incorrect Format"
+    
+    def send_email(self, email):
+        webbrowser.open(f'mailto:?to={email}',1)  
+        
     
     def incorrect_table(self):
         table = Table(title=" Incorrect email format! ",show_lines=True)

@@ -18,6 +18,13 @@ def is_valid(email:str):
         print("Correct email format!")
     else:
         print(checker.incorrect_table())
+
+@app.command()
+def send_mail(email:str):
+    if checker.is_correct_format(email):
+        checker.send_email(email)
+    else:
+        print(checker.incorrect_table())
         
 
     
