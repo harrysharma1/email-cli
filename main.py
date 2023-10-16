@@ -10,14 +10,14 @@ def get_name(email:str):
     if checker.is_correct_format(email):
         print(checker.get_name(email)) 
     else:
-        print(checker.incorrect_table)
+        print(checker.incorrect_table())
     
 @app.command()
 def is_valid(email:str):
     if checker.is_correct_format(email):
         print("Correct email format!")
     else:
-        print(checker)
+        print(checker.incorrect_table())
         
 
     
